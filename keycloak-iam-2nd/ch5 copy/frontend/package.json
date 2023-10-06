@@ -1,0 +1,14 @@
+{
+  "name": "keycloak-example-app",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "keycloak-js": "^22.0.3",
+    "start": "^5.1.0",
+    "string-replace-middleware": "^1.0.2"
+  }
+}

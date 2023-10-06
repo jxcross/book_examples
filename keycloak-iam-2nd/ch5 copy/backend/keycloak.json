@@ -1,0 +1,8 @@
+{
+  "realm": "myrealm",
+  "bearer-only": false,
+  "auth-server-url": "http://localhost:58081/auth",
+  "resource": "oauth-backend",
+  "verify-token-audience": false
+  
+}

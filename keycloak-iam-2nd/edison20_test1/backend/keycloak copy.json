@@ -1,0 +1,21 @@
+{
+  "realm": "EDISON2",
+  "bearer-only": true,
+  "auth-server-url": "https://dev248.edison.re.kr:8543",
+  "resource": "oauth-backend",
+  "credentials": {
+    "secret": "wJfQlbjoUgH3TaTZ5dIzwUUY0UJlg5mQ"
+  },
+  "verify-token-audience": false
+}
+
+{
+  "realm": "myrealm",
+  "bearer-only": true,
+  "auth-server-url": "http://localhost:58081",
+  "resource": "oauth-backend",
+  "credentials": {
+    "secret": "pAbH98jXuDk0bgQ62BGh2wv5hdpTxsiH"
+  },
+  "verify-token-audience": false
+}

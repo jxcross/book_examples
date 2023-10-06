@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Keycloak Example Application</title>
-    <script type="text/javascript" src="KC_URL/js/keycloak.js"></script>
+    <script type="text/javascript" src="node_modules/keycloak-js/dist/keycloak.js"></script>
     <script type="text/javascript">
         function output(content) {
             if (typeof content === 'object') {
@@ -35,7 +35,7 @@
             req.send();
         }
 
-        var kc = new Keycloak({ realm: 'myrealm', clientId: 'myclient' });
+        var kc = new Keycloak({ realm: 'myrealm', clientId: 'oauth-playground' });
         window.onload = function() {
             kc.init({'messageReceiveTimeout': 100000}).then(function() {
                 if(kc.authenticated) {
