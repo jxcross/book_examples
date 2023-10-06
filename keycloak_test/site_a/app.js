@@ -1,22 +1,30 @@
 var express = require('express');
+var session = require('express-session');
+var Keycloak = require('keycloak-connect');
+var cors = require('cors');
+
 var app = express();
-var stringReplace = require('string-replace-middleware');
 
-var KC_URL = process.env.KC_URL || "http://localhost:58081";
-var SERVICE_URL = process.env.SERVICE_URL || "http://localhost:53001/secured";
+app.use(cors());
 
-app.use(stringReplace({
-   'SERVICE_URL': SERVICE_URL,
-   'KC_URL': KC_URL
+var memoryStore = new session.MemoryStore();
+
+app.use(session({
+    secret: 'some secret',
+    resave: false,
+    saveUninitialized: true,
+    store: memoryStore
 }));
-app.use(express.static('.'))
 
-app.get('/', function(req, res) {
-    res.render('index.html');
-});
+var keycloak = new Keycloak({ store: memoryStore });
 
-app.get('/client.js', function(req, res) {
-    res.render('client.js');
+app.use(keycloak.middleware());
+
+app.get('/', keycloak.protect(), function (req, res) {
+    //console.log(keycloak.protect());
+    console.log(keycloak);
+    res.setHeader('content-type', 'text/plain');
+    res.send('Welcome!');
 });
 
 app.listen(53001, function () {

@@ -1,0 +1,9 @@
+{
+  "realm": "myrealm",
+  "auth-server-url": "http://localhost:58081",
+  "resource": "site_a",
+  "credentials" : {
+    "secret" : "G08bHojbXq0S0UzUZEAErEtI1AbQgqzJ"
+  },
+  "bearer-only": false
+}
