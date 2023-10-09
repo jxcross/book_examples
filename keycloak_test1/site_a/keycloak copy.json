@@ -1,0 +1,18 @@
+{
+  "realm": "myrealm",
+  "auth-server-url": "${env.KC_URL:http://localhost:58081}",
+  "resource": "mywebapp",
+  "credentials" : {
+    "secret" : "6ve1B4Z3tzoJsSiC5OCaNQZlFWHLlVRC"
+  }
+}
+
+{
+  "realm": "EDISON2",
+  "auth-server-url": "https://dev248.edison.re.kr/auth",
+  "resource": "localhost-client",
+  "credentials" : {
+    "secret" : "vgIP32HMSbfBlz2S5O2yoPwpXA3p2tUW"
+  }
+}
+
