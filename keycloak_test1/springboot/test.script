@@ -1,0 +1,21 @@
+export ACCESS_TOKEN=$( \
+curl --insecure -X POST https://dev248.edison.re.kr:8543/auth/realms/EDISON2/protocol/openid-connect/token \
+-H "content-type: application/x-www-form-urlencoded" \
+-d "client_id=test_site_a" \
+-d "client_secret=kEFr7BhHOi8J4MNoh2C6kKpYptUNcXf1" \
+-d "username=demo&password=demo&grant_type=password" \
+| jq --raw-output ".access_token" \
+)
+
+
+
+export ACCESS_TOKEN=$( \
+curl --insecure -X POST https://dev248.edison.re.kr:8543/auth/realms/EDISON2/protocol/openid-connect/token \
+-H "content-type: application/x-www-form-urlencoded" \
+-d "client_id=test_site_b" \
+-d "client_secret=XVLAdigCDxCIsWumr8MN3GCsIpofc6Et" \
+-d "username=demo&password=demo&grant_type=password" \
+| jq --raw-output ".access_token" \
+)
+
+

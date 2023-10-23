@@ -1,0 +1,8 @@
+server:
+  port: 3004
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev248.edison.re.kr:8543/auth/realms/EDISON2
