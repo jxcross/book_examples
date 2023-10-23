@@ -21,7 +21,6 @@ var keycloak = new Keycloak({ store: memoryStore });
 app.use(keycloak.middleware());
 
 app.get('/', keycloak.protect(), function (req, res) {
-    //console.log(keycloak.protect());
     console.log(keycloak);
     res.setHeader('content-type', 'text/plain');
     res.send('Welcome!');
