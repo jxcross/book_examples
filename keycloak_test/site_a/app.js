@@ -1,7 +1,7 @@
 var express = require('express');
 var stringReplace = require('string-replace-middleware');
 
-var KC_URL = process.env.KC_URL || "http://localhost:58081/auth/realms/myrealm";
+var KC_URL = process.env.KC_URL || "http://keycloak.localhost:58081/auth/realms/myrealm";
 
 var app = express();
 
