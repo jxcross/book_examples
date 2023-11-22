@@ -10,6 +10,8 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):
         """Process response from SerpAPI."""
         if "error" in res.keys():
             raise ValueError(f"Got error from SerpAPI: {res['error']}")
+        
+        # answer_box
         if "answer_box" in res.keys() and "answer" in res["answer_box"].keys():
             toret = res["answer_box"]["answer"]
         elif "answer_box" in res.keys() and "snippet" in res["answer_box"].keys():
@@ -19,16 +21,22 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):
             and "snippet_highlighted_words" in res["answer_box"].keys()
         ):
             toret = res["answer_box"]["snippet_highlighted_words"][0]
+            
+        # sports_results
         elif (
             "sports_results" in res.keys()
             and "game_spotlight" in res["sports_results"].keys()
         ):
             toret = res["sports_results"]["game_spotlight"]
+           
+        # knowledge_graph
         elif (
             "knowledge_graph" in res.keys()
             and "description" in res["knowledge_graph"].keys()
         ):
             toret = res["knowledge_graph"]["description"]
+            
+        # organic_results > snippet
         elif "snippet" in res["organic_results"][0].keys():
             toret = res["organic_results"][0]["link"]
 
